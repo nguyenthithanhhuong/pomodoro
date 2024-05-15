@@ -1,0 +1,73 @@
+.header {
+    height: var(--header-height);
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.sub-header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name-page {
+    font-size: 3.8rem;
+    font-weight: 400;
+}
+
+.navbar {
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-item {
+    font-size: 1.6rem;
+    padding: 0 8px;
+    display: inline-block;
+}
+
+.app__contaniner {
+ 
+}
+
+.pomo-content {
+    padding-top: 120px;
+    text-align: center;
+    height: calc(100vh - var(--header-height));
+}
+
+.pomo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.pomo-item {
+    display: inline-block;
+    margin: 0 4px;
+    font-size: 1.6rem;
+    width: 126px;
+    height: 50px;
+    background-color: var(--border-color);
+    text-align: center;
+    line-height: 50px;
+    border-radius: 2px;
+}
+
+.pomo-time {
+    font-size: 6.8rem;
+    padding: 12px 0 14px 0;
+}
+
+.pomo-button-start {
+    font-size: 1.6rem;
+}
+
+.encourage {
+    padding-top: 120px;
+    text-align: center;
+    height: calc(100vh - var(--header-height));
+}
