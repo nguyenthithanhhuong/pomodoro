@@ -1,17 +1,10 @@
 .header {
     height: var(--header-height);
-    background-color: var(--primary-color);
     color: var(--white-color);
 }
 
 .sub-header {
     height: var(--header-height);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.name-page {
     font-size: 3.8rem;
     font-weight: 400;
 }
