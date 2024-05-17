@@ -27,10 +27,13 @@ html {
 }
 
 body {
-    background-image: url('/assets/img/bg02.png');
+    background-image: url('/assets/img/bg01.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 body::before {
@@ -40,7 +43,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.15); 
     z-index: -1;
 }
 
@@ -138,6 +141,8 @@ body::before {
     --growth-from: 0;
     --growth-to: 1;
     margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
     position: relative;
     z-index: 1;
     animation: growth linear 0.1s;

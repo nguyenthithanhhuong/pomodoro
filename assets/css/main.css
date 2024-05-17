@@ -38,7 +38,7 @@
 }
 
 .use-content {
-    background-color: var(--white-color);
+    background-color: var(--modal-body-color);
     height: 180px;
     width: 300px;
     border-radius: 4px;
@@ -56,7 +56,7 @@
     right: 4%;
     border-width: 24px 22px;
     border-style: solid;
-    border-color: transparent transparent var(--white-color) transparent;
+    border-color: transparent transparent var(--modal-body-color) transparent;
     cursor: pointer;
 }
 
@@ -77,7 +77,7 @@
 }
 
 .contact-content {
-    background-color: var(--white-color);
+    background-color: var(--modal-body-color);
     height: 80px;
     width: 180px;
     border-radius: 4px;
@@ -96,7 +96,7 @@
     right: 0;
     border-width: 24px 22px;
     border-style: solid;
-    border-color: transparent transparent var(--white-color) transparent;
+    border-color: transparent transparent var(--modal-body-color) transparent;
     cursor: pointer;
 }
 
@@ -131,10 +131,6 @@
     display: block;
 }
 
-.app__contaniner {
- 
-}
-
 .pomo-content {
     text-align: center;
     height: calc(100vh - var(--header-height));
@@ -159,7 +155,7 @@
 }
 
 .pomo-time {
-    font-size: 8.0rem;
+    font-size: 8.6rem;
     color: var(--white-color);
     padding: 24px 0 26px 0;
 }
@@ -170,13 +166,13 @@
     align-items: center;
 }
 
-.pomo-item--active {
+.pomo-item.active {
     background-color: var(--btn-control-color);
     color: var(--text-color);
     font-weight: 500;
 }
 
-.pomo-btn-start {
+.pomo-btn-control {
     font-size: 2.2rem;
     height: 50px;
     width: 126px;
@@ -199,19 +195,20 @@
     padding-top: 80px;
     text-align: center;
     height: calc(100vh - var(--header-height));
-    color: var(--text-color);
+    color: var(--black-color);
+    font-weight: 500;
     font-size: 1.2rem;
     opacity: 0.6;
     /* border-left: 1px solid var(--btn-control-color); */
 }
 
 .pomo-note__encourage {
-    height: 200px;
-    width: 240px;
-    line-height: 1.8rem;
-    transform: translateY(34%);
+    height: 160px;
+    width: 200px;
+    line-height: 2.0rem;
+    transform: translateY(66%);
     background-color: var(--btn-control-color);
-    padding: 20px;
+    padding: 35px;
     word-wrap: break-word;
     border-radius: 6px;
     border: 1px solid var(--btn-control-color);
