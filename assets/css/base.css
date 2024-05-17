@@ -7,6 +7,9 @@
     --star-gold-color: #ffce3e;
     --btn-tab-color: #ffffff26;
     --btn-control-color: #ffffffbf;
+    --btn-close-color: #333333ad;
+    --modal-body-color: #ababab;
+    --select-color: #ddd8d8;
  
     --header-height: 80px;
 }
@@ -132,4 +135,8 @@ body::before {
     position: relative;
     z-index: 1;
     animation: growth linear 0.1s;
+    background-color: var(--modal-body-color);
+    height: 220px;
+    width: 250px;
+    border-radius: 4px;
 }

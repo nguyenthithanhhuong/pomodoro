@@ -84,28 +84,39 @@
 
         <div class="modal__body"> 
             <div class="menu-form">
-                <div class="grid__row">
-                    <div class="grid__column-4">
-                        <div class="menu-form__label">Background:</div>
-                        <div class="menu-form__label">Sound:</div>
-                        <div class="menu-form__label">Timer:</div>
+                <div class="menu-form_close-btn">
+                    <i class="menu-form_close-icon fa-solid fa-xmark"></i>
+                </div>
+                <div class="menu-form__content">
+                    <div class="grid__row">
+                        <div class="grid__column-4">
+                            <div class="menu-form__label">Background:</div>
+                            <div class="menu-form__label">Sound:</div>
+                            <div class="menu-form__label">Timer:</div>
+                        </div>
+                        <div class="grid__column-8">
+                            <select name="background" id="background" class="menu-form__select">
+                                <option value="night-code">Night code</option>
+                                <option value="black-cat">Black cat</option>
+                                <option value="study-hard">Study hard</option>
+                            </select>
+                            <br>
+                            <select name="sound" id="sound" class="menu-form__select">
+                                <option value="sound01">Sound 01</option>
+                                <option value="sound02">Sound 02</option>
+                            </select>
+                            <br>
+                            <ul class="menu-form__timer-list">
+                                <li class="menu-form__timer-item">work</li>
+                                <li class="menu-form__timer-item">short</li>
+                                <li class="menu-form__timer-item">long</li>
+                            </ul>
+                            <input type="text" class="menu-form__input" id="input-work" placeholder="25 - 75">
+                            <input type="text" class="menu-form__input" id="input-short" placeholder="05 - 15">
+                            <input type="text" class="menu-form__input" id="input-long" placeholder="15 - 45">        
+                        </div>
                     </div>
-                    <div class="grid__column-8">
-                        <select name="background" id="background" class="menu-form__select">
-                            <option value="night-code">Night code</option>
-                            <option value="black-cat">Black cat</option>
-                            <option value="study-hard">Study hard</option>
-                        </select>
-                        <br>
-                        <select name="sound" id="sound" class="menu-form__select">
-                            <option value="sound01">Sound 01</option>
-                            <option value="sound02">Sound 02</option>
-                        </select>
-                        <br>
-                        <input type="text" id="input-work" placeholder="work">
-                        <input type="text" id="input-short" placeholder="short break">
-                        <input type="text" id="input-long" placeholder="long break">        
-                    </div>
+                    <div class="menu-form__save-btn">Save</div>
                 </div>
             </div>
         </div>
