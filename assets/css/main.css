@@ -1,6 +1,8 @@
 .header {
     height: var(--header-height);
     color: var(--white-color);
+    /* border-bottom: 1px solid var(--btn-control-color); */
+    background-color: var(--header-color);
 }
 
 .sub-header {
@@ -153,6 +155,11 @@
     font-size: 2.8rem;
     color: var(--white-color);
     padding-left: 14px;
+    cursor: pointer;
+}
+
+.pomo-btn-replay:hover {
+    opacity: 0.7;
 }
 
 .pomo-note {
@@ -175,7 +182,7 @@
     margin: auto; */
 }
 
-.menu-form_close-btn {
+.menu-form__close-btn {
     background-color: var(--btn-close-color);
     height: 18px;
     width: 24px;
@@ -186,15 +193,18 @@
     position: absolute;
     top: 0;
     right: 0;
+    border-bottom: 1px solid var(--text-color);
 }
 
-.menu-form_close-icon {
+.menu-form__close-icon {
     color: var(--white-color);
 }
 
 .menu-form__content {
     position: absolute;
-    margin: 36px 0 30px 16px;
+    margin: 19px 0 30px 16px;
+    border-top: 1px solid var(--text-color);
+    padding-top: 8px;
 }
 
 .menu-form__label {
@@ -235,4 +245,10 @@
     position: absolute;
     right: 3%;
     bottom: -20%;
+}
+
+.menu-form__close-btn:hover,
+.menu-form__save-btn:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }

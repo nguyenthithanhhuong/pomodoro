@@ -10,6 +10,7 @@
     --btn-close-color: #333333ad;
     --modal-body-color: #ababab;
     --select-color: #ddd8d8;
+    --header-color: #ffffff42;
  
     --header-height: 80px;
 }
@@ -86,6 +87,11 @@ body::before {
     cursor: pointer;
 }
 
+.btn-tab:hover,
+.btn-control:hover {
+    opacity: 0.8;
+}
+
 .sub-background {
     background-color: var(--btn-tab-color);
     border-left: 1px solid var(--btn-control-color);
@@ -112,7 +118,7 @@ body::before {
 
 /* Modal */
 .modal {
-    display: flex;
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -136,7 +142,7 @@ body::before {
     z-index: 1;
     animation: growth linear 0.1s;
     background-color: var(--modal-body-color);
-    height: 220px;
+    height: 180px;
     width: 250px;
     border-radius: 4px;
 }
