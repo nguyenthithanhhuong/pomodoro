@@ -1,0 +1,68 @@
+/* mobile & tablet*/
+@media (max-width: 1023px) {
+
+}
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+}
+
+/* mobile */
+@media (max-width: 739px) {
+.name-page {
+    font-size: 2.6rem;
+}
+
+.navbar-item {
+    font-size: 1.2rem;
+}
+
+.pomo-item {
+    margin: 0 4px;
+    font-size: 1.0rem;
+    width: 80px;
+    height: 38px;
+    line-height: 38px;
+    border-radius: 14px;
+}
+
+.pomo-time {
+    font-size: 6.4rem;
+    padding: 10px 0 12px 0;
+}
+
+.pomo-btn-start {
+    font-size: 1.0rem;
+    height: 40px;
+    width: 90px;
+    border-radius: 6px;
+}
+
+.pomo-btn-replay {
+    font-size: 2.2rem;
+}
+
+.use-content__desc, .contact-content__desc {
+    font-size: 1.0rem;
+}
+
+.contact-content__link {
+    font-size: 1.0rem;
+}
+
+.contact-content {
+    height: 76px;
+    width: 130px;
+}
+
+.use-content__list {
+    line-height: 1.6rem;
+    font-size: 1.0rem;
+}
+
+.use-content {
+    height: 160px;
+    width: 282px;
+}
+}

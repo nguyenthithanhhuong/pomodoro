@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
@@ -17,30 +19,34 @@
     <div class="main">
         <!-- Header -->
         <header class="header">
-            <div class="grid">
+            <div class="grid wide">
                 <div class="sub-header">
                     <div class="name-page">Pomodoro</div>
                     <nav class="navbar">
                         <ul class="navbar-list">
                             <li class="navbar-item">Menu</li>
-                            <li class="navbar-item">How to use</li>
-                            <li class="navbar-item">Contact</li>
+                            <li class="navbar-item navbar-item__use">
+                                How to use
+                                <div class="use-content">
+                                    <p class="use-content__desc">
+                                        Here's a quick summary of how to use it:
+                                    </p>
+                                    <ul class="use-content__list">
+                                        <li class="use-content__item">Set a timer and focus solely on your task.</li>
+                                        <li class="use-content__item">When the timer rings, take a short break</li>
+                                        <li class="use-content__item">Repeat this cycle for four Pomodoros, then take a longer break</li>
+                                        <li class="use-content__item">Track your progress and adjust intervals as needed for maximum productivity.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="navbar-item navbar-item__contact">
+                                Contact
+                                <div class="contact-content">
+                                    <p class="contact-content__desc">Contact me<br> and we study together</p>
+                                    <a href="https://www.facebook.com/thankhuoqqq" class="contact-content__link">thankhuoq</a>
+                                </div>
+                            </li>
                         </ul>
-                        <div class="use-content">
-                            <p class="use-content__desc">
-                                Here's a quick summary of how to use it:
-                            </p>
-                            <ul class="use-content__list">
-                                <li class="use-content__item">Set a timer and focus solely on your task.</li>
-                                <li class="use-content__item">When the timer rings, take a short break</li>
-                                <li class="use-content__item">Repeat this cycle for four Pomodoros, then take a longer break</li>
-                                <li class="use-content__item">Track your progress and adjust intervals as needed for maximum productivity.</li>
-                            </ul>
-                        </div>
-                        <div class="contact-content">
-                            <p class="contact-content__desc">Contact me<br> and we study together</p>
-                            <a href="https://www.facebook.com/thankhuoqqq" class="contact-content__link">thankhuoq</a>
-                        </div>
                     </nav>
                 </div>
             </div>
@@ -48,25 +54,27 @@
 
         <!-- Container -->
         <div class="app__container">
-            <div class="grid__row">
-                <div class="grid__column-8">
-                    <div class="pomo-content">
-                        <ul class="pomo-list">
-                            <li class="pomo-item btn-tab pomo-item--active">Work</li>
-                            <li class="pomo-item btn-tab">Short break</li>
-                            <li class="pomo-item btn-tab">Long break</li>
-                        </ul>
-                        <div class="pomo-time">25:00</div>
-                        <div class="pomo-btn">
-                            <button class="pomo-btn-start btn-control">Start</button>
-                            <i class="pomo-btn-replay fa-solid fa-arrow-rotate-left"></i>
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-8 m-8 c-12">
+                        <div class="pomo-content">
+                            <ul class="pomo-list">
+                                <li class="pomo-item btn-tab pomo-item--active">Work</li>
+                                <li class="pomo-item btn-tab">Short break</li>
+                                <li class="pomo-item btn-tab">Long break</li>
+                            </ul>
+                            <div class="pomo-time">25:00</div>
+                            <div class="pomo-btn">
+                                <button class="pomo-btn-start btn-control">Continue</button>
+                                <i class="pomo-btn-replay fa-solid fa-arrow-rotate-left"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="grid__column-4">
-                    <div class="pomo-note">
-                        <div class="encourage">
-                            Encorageeeee
+                    <div class="col l-4 m-4 c-0">
+                        <div class="pomo-note">
+                            <div class="pomo-note__encourage">
+                                Encorageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                            </div>
                         </div>
                     </div>
                 </div>
