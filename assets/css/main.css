@@ -164,3 +164,9 @@
     background-color: var(--btn-tab-color);
     border-left: 1px solid var(--btn-control-color);
 }
+
+.menu-form {
+    background-color: var(--white-color);
+    height: 260px;
+    width: 300px;
+}

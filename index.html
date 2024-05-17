@@ -78,5 +78,37 @@
 
         </footer>
     </div>
+
+    <div class="modal">
+        <div class="modal__overlay"></div>
+
+        <div class="modal__body"> 
+            <div class="menu-form">
+                <div class="grid__row">
+                    <div class="grid__column-4">
+                        <div class="menu-form__label">Background:</div>
+                        <div class="menu-form__label">Sound:</div>
+                        <div class="menu-form__label">Timer:</div>
+                    </div>
+                    <div class="grid__column-8">
+                        <select name="background" id="background" class="menu-form__select">
+                            <option value="night-code">Night code</option>
+                            <option value="black-cat">Black cat</option>
+                            <option value="study-hard">Study hard</option>
+                        </select>
+                        <br>
+                        <select name="sound" id="sound" class="menu-form__select">
+                            <option value="sound01">Sound 01</option>
+                            <option value="sound02">Sound 02</option>
+                        </select>
+                        <br>
+                        <input type="text" id="input-work" placeholder="work">
+                        <input type="text" id="input-short" placeholder="short break">
+                        <input type="text" id="input-long" placeholder="long break">        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
 </body>
 </html>
