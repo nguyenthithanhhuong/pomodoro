@@ -50,8 +50,6 @@ let pomoTimes = [
 function formatTime(time) {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
-    console.log(minutes)
-    console.log(seconds)
     return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
@@ -142,9 +140,9 @@ function setTimers() {
         workTimer = 25;
     }
 
-    // if (shortTimer < 5 || shortTimer > 15) {
-    //     shortTimer = 5;
-    // }
+    if (shortTimer < 5 || shortTimer > 15) {
+        shortTimer = 5;
+    }
 
     if (longTimer < 15 || longTimer > 45) {
         longTimer = 10;
@@ -163,7 +161,7 @@ function setTimers() {
         pomos[0].classList.add('active');
         pomoBtn.textContent = "Start";
         clearInterval(currentTimer);
-        pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
+        pomoTime.textContent = formatTime(pomoTimes[0].time);
     }
 }
 
@@ -189,12 +187,15 @@ function countdownTime() {
             let timeRemaining = pomoTimes[currentPomoIdx].time;
 
             currentTimer = setInterval(function() {
-                if (currentTimer <= 0) {
-                    clearInterval(currentTimer)
+                if (timeRemaining <= 0) {
+                    pomoBtn.textContent = "Start";
+                    pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
+                    clearInterval(currentTimer);
+                } else {
+                    timeRemaining--;
+                    pomoTime.textContent = formatTime(timeRemaining);    
                 }
-                timeRemaining--;
-                pomoTime.textContent = formatTime(timeRemaining);
-            }, 1000);
+           }, 1000);
         } else if (pomoBtn.textContent === "Pause") {
             pomoBtn.textContent = "Start";
             clearInterval(currentTimer);
