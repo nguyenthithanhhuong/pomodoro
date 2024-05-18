@@ -23,13 +23,21 @@ const bgSelect = $('#background')
 
 const saveMenuBtn = $('.menu-form__save-btn')
 
-console.log(bgSelect)
+const audio = $('.audio-sound')
+
+const audioSrc = $('.audio-source')
+
+const audioSelect = $('#sound')
+
+const workTimerInput = $('#input-work')
+const shortTimerInput = $('#input-short')
+const longTimerInput = $('#input-long')
 
 function PomoTime(time) {
     this.time = time;
 }
 
-const pomoTimes = [
+let pomoTimes = [
     new PomoTime(25),
     new PomoTime(05),
     new PomoTime(15)
@@ -113,23 +121,65 @@ backgrounds = [
 function setBackground() {
     const bgIdx = bgSelect.options.selectedIndex;
     const bg = backgrounds[bgIdx];
-    console.log(bg)
     bodyElement.style.backgroundImage = `url('${bg.url}')`;
 }
 
-function setTimers() {
-    
+function Audio(url) {
+    this.url = url;
 }
+
+const audios = [
+    new Audio('./assets/audio/aesthetics.mp3'),
+    new Audio('./assets/audio/goodnight.mp3')
+]
+
+function setAudio() {
+    const audioIdx = audioSelect.options.selectedIndex;
+    const audioCurent = audios[audioIdx];
+    audioSrc.src = audioCurent.url;
+    audio.load();
+    audio.play();
+}
+
+function setTimers() {
+    const workTimer = workTimerInput.value
+    const shortTimer = shortTimerInput.value
+    const longTimer = longTimerInput.value
+
+    if (workTimer < 25 || workTimer > 75) {
+        workTimer = 25;
+    }
+
+    if (shortTimer < 5 || shortTimer > 15) {
+        shortTimer = 5;
+    }
+
+    if (longTimer < 15 || longTimer > 45) {
+        longTimer = 10;
+    }
+
+    pomoTimes = [
+        new PomoTime(parseInt(workTimer)),
+        new PomoTime(parseInt(shortTimer)),
+        new PomoTime(parseInt(longTimer))
+    ];
+
+    pomoTime.textContent = formatTime(pomoTimes[0].time / 60)
+}
+
 
 function saveMenuEvent() {
     saveMenuBtn.onclick = function() {
         menuForm.style.display = 'none';
         setBackground();
-
+        setAudio();
+        setTimers();
     }
 }
 
 function app() {
+    saveMenuEvent();
+
     convertPomoTab();
 
     stateControl();
@@ -139,8 +189,6 @@ function app() {
     closeMenuForm();
 
     renderEncourage();
-
-    saveMenuEvent();
 }
 
 app();
