@@ -12,7 +12,7 @@ const pomoBtn = $('.pomo-btn-control')
 const pomoReplay = $('.pomo-btn-replay');
 
 const menuBtn =  $('.navbar-item__menu')
-
+ 
 const menuForm = $('.modal')
 
 const menuCloseBtn = $('.menu-form__close-btn')
@@ -64,10 +64,10 @@ function convertPomoTab() {
             if (currentTimer) {
                 clearInterval(currentTimer);
             }
+            audio.pause();
         }
     })
 }
-
 
 function renderMenuForm() {
     menuBtn.onclick = function() {
@@ -196,10 +196,12 @@ function countdownTime() {
                     pomoTime.textContent = formatTime(timeRemaining);    
                 }
            }, 1000);
+           audio.play();
         } else if (pomoBtn.textContent === "Pause") {
             pomoBtn.textContent = "Start";
             clearInterval(currentTimer);
             pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
+            audio.pause();
         }
         
     }
@@ -210,10 +212,12 @@ function replayTimer() {
         pomoBtn.textContent = "Start";
         clearInterval(currentTimer);
         pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
+        audio.pause();
     }
 }
 
 function app() {
+
     saveMenuEvent();
 
     convertPomoTab();
@@ -230,4 +234,3 @@ function app() {
 }
 
 app();
-
