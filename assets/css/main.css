@@ -17,9 +17,6 @@
     font-weight: 400;
 }
 
-.navbar {
-}
-
 .navbar-list {
     list-style: none;
     display: flex;
@@ -47,6 +44,7 @@
     right: 12%;
     padding: 18px 0;
     display: none;
+    z-index: 1;
 }
 
 .use-content::before {
@@ -59,7 +57,6 @@
     border-color: transparent transparent var(--modal-body-color) transparent;
     cursor: pointer;
 }
-
 
 .use-content__desc {
     margin: 4px 0;
@@ -88,6 +85,7 @@
     text-align: center;
     padding: 8px 0;
     display: none;
+    z-index: 1;
 }
 
 .contact-content::before {
@@ -130,6 +128,7 @@
 
 .navbar-item__contact:hover .contact-content {
     display: block;
+    visibility: visible;
 }
 
 .pomo-content {
@@ -289,7 +288,3 @@
     opacity: 0.7;
     cursor: pointer;
 }
-
-/* .audio-list {
-    transform: translateY(-550%);
-} */
