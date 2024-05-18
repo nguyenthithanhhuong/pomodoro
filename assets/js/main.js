@@ -201,6 +201,7 @@ function countdownTime() {
             pomoBtn.textContent = "Start";
             clearInterval(currentTimer);
             pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
+            audio.currentTime = 0;
             audio.pause();
         }
         
@@ -212,7 +213,15 @@ function replayTimer() {
         pomoBtn.textContent = "Start";
         clearInterval(currentTimer);
         pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
+        audio.currentTime = 0;
         audio.pause();
+    }
+}
+
+function setupAudio() {
+    audio.onended = function() {
+        audio.currentTime = 0;
+        audio.play();
     }
 }
 
@@ -231,6 +240,8 @@ function app() {
     countdownTime();
 
     replayTimer();
+
+    setupAudio();
 }
 
 app();
