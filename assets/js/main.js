@@ -9,6 +9,8 @@ const pomoTime = $('.pomo-time')
 
 const pomoBtn = $('.pomo-btn-control')
 
+const pomoReplay = $('.pomo-btn-replay');
+
 const menuBtn =  $('.navbar-item__menu')
 
 const menuForm = $('.modal')
@@ -33,51 +35,41 @@ const workTimerInput = $('#input-work')
 const shortTimerInput = $('#input-short')
 const longTimerInput = $('#input-long')
 
-function PomoTime(time) {
-    this.time = time;
+let currentPomoIdx = 0;
+
+function PomoTime(minutes) {
+    this.time = minutes * 60;
 }
 
 let pomoTimes = [
     new PomoTime(25),
     new PomoTime(05),
     new PomoTime(15)
-]
+] 
 
 function formatTime(time) {
-    const minutes = String((time % 1) * 60).padStart(2, '0');
-    const seconds = String("00");
-    return `${minutes}:${seconds}`;
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    console.log(minutes)
+    console.log(seconds)
+    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
 function convertPomoTab() {
     pomos.forEach((pomo, index) => {
         pomo.onclick = function() {
+            pomoBtn.textContent = "Start";
             $('.pomo-item.active').classList.remove('active');
-    
             this.classList.add('active');
-            pomoTime.textContent = formatTime(pomoTimes[index].time / 60)
+            currentPomoIdx = index;
+            pomoTime.textContent = formatTime(pomoTimes[index].time)
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
         }
     })
 }
 
-function StateControl(state) {
-    this.state = state;
-}
-
-stateControls = [
-    new StateControl('Start'),
-    new StateControl('Pause'),
-    new StateControl('Continue'),
-]
-
-let currentStateIdx = 0;
-
-function stateControl() {
-    pomoBtn.onclick = function() {
-        currentStateIdx = (currentStateIdx + 1) % stateControls.length;
-        pomoBtn.textContent = stateControls[currentStateIdx].state
-    }
-}
 
 function renderMenuForm() {
     menuBtn.onclick = function() {
@@ -150,9 +142,9 @@ function setTimers() {
         workTimer = 25;
     }
 
-    if (shortTimer < 5 || shortTimer > 15) {
-        shortTimer = 5;
-    }
+    // if (shortTimer < 5 || shortTimer > 15) {
+    //     shortTimer = 5;
+    // }
 
     if (longTimer < 15 || longTimer > 45) {
         longTimer = 10;
@@ -164,9 +156,16 @@ function setTimers() {
         new PomoTime(parseInt(longTimer))
     ];
 
-    pomoTime.textContent = formatTime(pomoTimes[0].time / 60)
-}
+    pomoTime.textContent = formatTime(pomoTimes[0].time)
 
+    if (pomos[0] !== $('.pomo-item.active')) {
+        $('.pomo-item.active').classList.remove('active');
+        pomos[0].classList.add('active');
+        pomoBtn.textContent = "Start";
+        clearInterval(currentTimer);
+        pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
+    }
+}
 
 function saveMenuEvent() {
     saveMenuBtn.onclick = function() {
@@ -177,18 +176,57 @@ function saveMenuEvent() {
     }
 }
 
+let currentTimer;
+
+function countdownTime() {
+    pomoBtn.onclick = function() {    
+        if (pomoBtn.textContent === "Start") {
+            pomoBtn.textContent = "Pause";
+            if (currentTimer) {
+                clearInterval(currentTimer);
+            }
+
+            let timeRemaining = pomoTimes[currentPomoIdx].time;
+
+            currentTimer = setInterval(function() {
+                if (currentTimer <= 0) {
+                    clearInterval(currentTimer)
+                }
+                timeRemaining--;
+                pomoTime.textContent = formatTime(timeRemaining);
+            }, 1000);
+        } else if (pomoBtn.textContent === "Pause") {
+            pomoBtn.textContent = "Start";
+            clearInterval(currentTimer);
+            pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
+        }
+        
+    }
+}
+
+function replayTimer() {
+    pomoReplay.onclick = function() {
+        pomoBtn.textContent = "Start";
+        clearInterval(currentTimer);
+        pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
+    }
+}
+
 function app() {
     saveMenuEvent();
 
     convertPomoTab();
-
-    stateControl();
 
     renderMenuForm();
 
     closeMenuForm();
 
     renderEncourage();
+
+    countdownTime();
+
+    replayTimer();
 }
 
 app();
+
