@@ -119,9 +119,9 @@ function Audio(url) {
 }
 
 const audios = [
-    new Audio('../../audio/aesthetics.mp3'),
-    new Audio('../../audio/goodnight.mp3'),
-    new Audio('../../audio/ring.mp3'),
+    new Audio('../audio/aesthetics.mp3'),
+    new Audio('../audio/goodnight.mp3'),
+    new Audio('../audio/ring.mp3'),
 ]
 
 function setAudio() {
