@@ -103,9 +103,9 @@ function Background(url) {
 }
 
 backgrounds = [
-    new Background('../img/bg01.png'),
-    new Background('../img/bg02.png'),
-    new Background('../img/bg03.png')
+    new Background('https://nguyenthithanhhuong.github.io/pomodoro/assets/img/bg01.png'),
+    new Background('https://nguyenthithanhhuong.github.io/pomodoro/assets/img/bg02.png'),
+    new Background('https://nguyenthithanhhuong.github.io/pomodoro/assets/img/bg03.png')
 ]
 
 function setBackground() {
@@ -119,9 +119,9 @@ function Audio(url) {
 }
 
 const audios = [
-    new Audio('../audio/aesthetics.mp3'),
-    new Audio('../audio/goodnight.mp3'),
-    new Audio('../audio/ring.mp3'),
+    new Audio('https://nguyenthithanhhuong.github.io/pomodoro/assets/audio/aesthetics.mp3'),
+    new Audio('https://nguyenthithanhhuong.github.io/pomodoro/assets/audio/goodnight.mp3'),
+    new Audio('https://nguyenthithanhhuong.github.io/pomodoro/assets/audio/ring.mp3'),
 ]
 
 function setAudio() {
@@ -137,9 +137,9 @@ function setAudio() {
 }
 
 function setTimers() {
-    const workTimer = workTimerInput.value
-    const shortTimer = shortTimerInput.value
-    const longTimer = longTimerInput.value
+    let workTimer = workTimerInput.value
+    let shortTimer = shortTimerInput.value
+    let longTimer = longTimerInput.value
 
     if (workTimer < 25 || workTimer > 75) {
         workTimer = 25;
