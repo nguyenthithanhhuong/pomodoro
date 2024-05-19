@@ -120,15 +120,20 @@ function Audio(url) {
 
 const audios = [
     new Audio('./assets/audio/aesthetics.mp3'),
-    new Audio('./assets/audio/goodnight.mp3')
+    new Audio('./assets/audio/goodnight.mp3'),
+    new Audio('./assets/audio/ring.mp3'),
 ]
 
 function setAudio() {
-    const audioIdx = audioSelect.options.selectedIndex;
-    const audioCurent = audios[audioIdx];
-    audioSrc.src = audioCurent.url;
-    audio.load();
-    audio.play();
+    if (pomoBtn.textContent === "Start") {
+        audio.pause();
+    } else {
+        const audioIdx = audioSelect.options.selectedIndex;
+        const audioCurent = audios[audioIdx];
+        audioSrc.src = audioCurent.url;
+        audio.load();
+        audio.play();
+    }
 }
 
 function setTimers() {
@@ -165,15 +170,6 @@ function setTimers() {
     }
 }
 
-function saveMenuEvent() {
-    saveMenuBtn.onclick = function() {
-        menuForm.style.display = 'none';
-        setBackground();
-        setAudio();
-        setTimers();
-    }
-}
-
 let currentTimer;
 
 function countdownTime() {
@@ -191,6 +187,8 @@ function countdownTime() {
                     pomoBtn.textContent = "Start";
                     pomoTime.textContent = formatTime(pomoTimes[currentPomoIdx].time);
                     clearInterval(currentTimer);
+                    audio.currentTime = 0;
+                    audio.pause();
                 } else {
                     timeRemaining--;
                     pomoTime.textContent = formatTime(timeRemaining);    
@@ -225,9 +223,19 @@ function setupAudio() {
     }
 }
 
+
+function saveMenuEvent() {
+    saveMenuBtn.onclick = function() {
+        menuForm.style.display = 'none';
+        setBackground();
+        setAudio();
+        setTimers();
+    }
+}
+
+
 function app() {
 
-    saveMenuEvent();
 
     convertPomoTab();
 
@@ -242,6 +250,9 @@ function app() {
     replayTimer();
 
     setupAudio();
+
+    saveMenuEvent();
+
 }
 
 app();
