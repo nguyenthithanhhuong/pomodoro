@@ -103,9 +103,9 @@ function Background(url) {
 }
 
 backgrounds = [
-    new Background('/assets/img/bg01.png'),
-    new Background('/assets/img/bg02.png'),
-    new Background('/assets/img/bg03.png')
+    new Background('../../img/bg01.png'),
+    new Background('../../img/bg02.png'),
+    new Background('../../img/bg03.png')
 ]
 
 function setBackground() {
@@ -119,9 +119,9 @@ function Audio(url) {
 }
 
 const audios = [
-    new Audio('./assets/audio/aesthetics.mp3'),
-    new Audio('./assets/audio/goodnight.mp3'),
-    new Audio('./assets/audio/ring.mp3'),
+    new Audio('../../audio/aesthetics.mp3'),
+    new Audio('../../audio/goodnight.mp3'),
+    new Audio('../../audio/ring.mp3'),
 ]
 
 function setAudio() {
