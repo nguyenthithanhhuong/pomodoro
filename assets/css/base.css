@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    background-image: url('img/bg01.png');
+    background-image: url('../img/bg01.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
