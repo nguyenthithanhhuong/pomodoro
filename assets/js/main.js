@@ -103,9 +103,9 @@ function Background(url) {
 }
 
 backgrounds = [
-    new Background('../../img/bg01.png'),
-    new Background('../../img/bg02.png'),
-    new Background('../../img/bg03.png')
+    new Background('../img/bg01.png'),
+    new Background('../img/bg02.png'),
+    new Background('../img/bg03.png')
 ]
 
 function setBackground() {
